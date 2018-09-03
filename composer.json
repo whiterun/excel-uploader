@@ -1,0 +1,14 @@
+{
+    "name": "whiterun/yolo",
+    "type": "project",
+    "require": {
+        "nuovo/spreadsheet-reader": "^0.5.11",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "whiterun",
+            "email": "whiterun89@gmail.com"
+        }
+    ]
+}
