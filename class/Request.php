@@ -2,8 +2,8 @@
 Class Request {
 	function __construct()
 	{
-		$this->uri		= 'https://api.turbo.co.id/';
-		// $this->uri		= 'localhost:8888/';
+		// $this->uri		= 'https://api.turbo.co.id/';
+		$this->uri		= 'localhost:8888/';
 		$this->query	= [ 'secret_key' => '4510deb00627a4dabb800d0f485af867f4e836e7' ];
 		$this->client	= new GuzzleHttp\Client();
 	}
