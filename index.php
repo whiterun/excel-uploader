@@ -8,7 +8,7 @@
 	
 	$data		= [];
 	$request	= new Request;
-	$reader		= new SpreadsheetReader('yolo.xlsx');
+	$reader		= new SpreadsheetReader('yolo1.xlsx');
 	
 	foreach ( $reader as $index => $row)
 	{
@@ -16,9 +16,10 @@
 		{
 			if ( $row[12] != '#N/A' )
 			{
+				$stripped	= [];
+				
 				if ( !empty($row[7]) )
 				{
-					$stripped	= [];
 					$strip_desc	= preg_split("/[\n;]+/", $row[7]);
 					
 					foreach ( $strip_desc as $strip )
