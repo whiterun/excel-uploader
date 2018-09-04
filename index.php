@@ -43,7 +43,7 @@
 								if ( !empty(preg_replace( "/\r|\n/", "", $fetch[0])) )
 								{
 									$stripped[] = [
-										'label'		=> 'Other',
+										'label'		=> 'Spec',
 										'deskripsi'	=> trim($fetch[0])
 									];
 								}
