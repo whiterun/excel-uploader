@@ -59,8 +59,8 @@
 					];
 				}
 				
-				// $data = [
-				$data[] = [
+				$data = [
+				// $data[] = [
 					'informasi'		=> [
 						'unspsc'					=> $row[1],
 						'nama_produk'				=> $row[4],
@@ -79,7 +79,7 @@
 						'image_100x100'				=> $strip_img[0],
 						'image_300x300'				=> $strip_img[0],
 						'image_800x800'				=> $strip_img[0],
-						'check_updated'				=> $row[12],
+						// 'check_updated'				=> $row[12],
 					],
 					'spesifikasi'	=> $stripped,
 					'harga'			=> [
@@ -92,7 +92,7 @@
 					'lampiran'	=> []
 				];
 				
-				// $request->post('produk', $data);
+				$request->post('produk', $data);
 				
 				// if ($index > 0 && $index % 20 == 0) {
 					// sleep(2);
@@ -105,6 +105,6 @@
 		echo SimpleXLSX::parse_error();
 	}
 	
-	echo json_encode($data);
-	// echo $request->get('all_produk');
+	// echo json_encode($data);
+	echo $request->get('all_produk');
 ?>
