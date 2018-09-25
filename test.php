@@ -22,6 +22,23 @@
 	{
 		if ( !isset($arrays[$i]) ) return array();
 		
+		if ( count($arrays) == 1 )
+		{
+			foreach ( $arrays[$i] as $v )
+			{
+				$result[] = [
+					'my_product_id'	=> $product_id,
+					'sku'			=> $product_id.$v['sku'],
+					'image_url'		=> $v['new_prop'],
+					'attributes'	=> json_encode([
+						[ 'name' => $v['key'],'option' => $v['name'] ]
+					], 1)
+				];
+			}
+			
+			return $result;
+		}
+		
 		if ( $i == count($arrays) - 1 ) return $arrays[$i];
 		
 		// get combinations from subsequent arrays
@@ -37,7 +54,8 @@
 				$result[] = is_array($t) ? 
 					[
 						'my_product_id'	=> $product_id,
-						'sku'			=> $v['sku'].$product_id.$t['sku'], 
+						'sku'			=> $product_id.$v['sku'].$t['sku'],
+						'image_url'		=> $v['new_prop'],
 						'attributes'	=> json_encode([
 							[ 'name' => $v['key'],'option' => $v['name'] ],
 							[ 'name' => $t['key'],'option' => $t['name'] ]
